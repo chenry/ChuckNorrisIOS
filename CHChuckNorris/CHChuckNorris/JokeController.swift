@@ -27,6 +27,16 @@ class JokeController {
         
     }
     
+    func getJokeCategories (jokeCategoryHandler: ([String]) -> ()) {
+        makeRequestToAPI("http://api.icndb.com/categories") {
+            json in
+            
+            if let categoriesArray = json["value"] as? NSArray {
+                
+            }
+        }
+    }
+    
     func getRandomJoke(jokeHandler: (Joke) -> ()) {
         makeRequestToAPI("http://api.icndb.com/jokes/random") {
             json in
